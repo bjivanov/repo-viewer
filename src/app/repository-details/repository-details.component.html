@@ -1,0 +1,23 @@
+<p class="repo-info">
+  vmware/{{ repository }} {{ currentTab }}
+  <button class="btn-back btn btn-outline btn-sm" (click)="onBackToPinnedReposClicked()">Back to Pinned Repos</button>
+</p>
+
+<clr-tabs>
+  <clr-tab>
+    <button clrTabLink (click)="selectTab('details')">Details</button>
+    <ng-template [clrIfActive]="currentTab === 'details'">
+      <clr-tab-content>
+        <app-basic-data></app-basic-data>
+      </clr-tab-content>
+    </ng-template>
+  </clr-tab>
+  <clr-tab>
+    <button clrTabLink (click)="selectTab('commits')">Commits</button>
+    <ng-template [clrIfActive]="currentTab === 'commits'">
+      <clr-tab-content>
+        <app-commits></app-commits>
+      </clr-tab-content>
+    </ng-template>
+  </clr-tab>
+</clr-tabs>

@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+  <form class="login" [formGroup]="registerForm" (ngSubmit)="register()">
+    <section class="title">
+      Register
+    </section>
+    <div class="login-group">
+      <clr-input-container>
+        <input type="text" name="username" clrInput placeholder="Username" formControlName="username" />
+      </clr-input-container>
+      <clr-password-container>
+        <input type="password" name="password" clrPassword placeholder="Password" formControlName="password" />
+      </clr-password-container>
+      <div [class]="status" [class.active]="true" *ngIf="status">
+        {{message}}
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+      <p>Already Signed Up?</p>
+      <a [routerLink]="'/login'" class="signup">Login here</a>
+    </div>
+  </form>
+</div>

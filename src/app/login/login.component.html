@@ -1,0 +1,20 @@
+<div class="login-wrapper">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
+    <section class="title">
+      Login
+    </section>
+    <div class="login-group">
+      <clr-input-container>
+        <input type="text" name="username" clrInput placeholder="Username" formControlName="username" />
+      </clr-input-container>
+      <clr-password-container>
+        <input type="password" name="password" clrPassword placeholder="Password" formControlName="password" />
+      </clr-password-container>
+      <div [class]="loginStatus" [class.active]="true" *ngIf="loginStatus">
+        {{message}}
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a [routerLink]="'/register'" class="signup">Sign up</a>
+    </div>
+  </form>
+</div>
